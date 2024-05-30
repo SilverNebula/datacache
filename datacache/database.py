@@ -35,7 +35,7 @@ class Database(object):
     """
     def __init__(self, path):
         self.path = path
-        self.connection = sqlite3.connect(path)
+        self.connection = sqlite3.connect(path,check_same_thread=False)
 
     def _commit(self):
         self.connection.commit()
